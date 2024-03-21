@@ -1,0 +1,108 @@
+id: '17095254388810.24562732222711503'
+kind: workflow
+name: transitions
+nameConfigured: true
+steps:
+  - id: '17096894754090.728268591513894'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17095254406190.6878398165427266'
+                type: httpRequest
+                name: request
+                params:
+                  - type: datasourceId
+                    value: CodeBeamer
+                    valueType: string
+                    mustSelectFirst: true
+                  - type: method
+                    value: GET
+                    valueType: string
+                  - type: url
+                    value: >-
+                      rest/items/{{ui.restTable3.selectedRow.data.id}}/transitions
+                    valueType: interpolatedValue
+                    interpolationType: string
+                  - type: headers
+                    value:
+                      - name: ''
+                        value: ''
+                    valueType: custom
+                    interpolationType: string
+                  - type: queryParams
+                    value:
+                      - name: ''
+                        value: ''
+                    valueType: custom
+                    interpolationType: string
+                  - type: body
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: structuredBody
+                    value: []
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: bodyType
+                    value: raw
+                    valueType: string
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 0
+                fallthroughError: false
+                isChanged: true
+              - id: '17095256012580.33032027100643835'
+                type: customAsyncCode
+                name: code
+                params:
+                  - type: asyncCode
+                    value: ./code.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 0
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+parentId: '17096022519680.2310846228204828'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.transitions.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.transitions.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.transitions.name}}" has failed.
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

@@ -1,0 +1,330 @@
+id: '17095400996670.6360424507783957'
+definitionId: popupForm
+parentSlotId: '2'
+styles:
+  xl:
+    gridItem:
+      x: 21
+      y: 205
+      w: 3
+      h: 9
+  xs:
+    gridItem:
+      x: 0
+      y: 249
+      w: 24
+      h: 9
+properties:
+  dynamicFields:
+    value: []
+    dataValue: |-
+      [
+        {
+          "prop": "id",
+          "type": "number",
+          "primaryKey": true
+        },
+        "full_name",
+        {
+          "prop": "avatar",
+          "type": "image"
+        },
+        {
+          "prop": "email",
+          "type": "link"
+        }
+      ]
+    withData: false
+  entity: '{{ui.restTable2.selectedRow.data}}'
+  name: resttable2Popupform
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Form
+  buttonText: 'Create Item '
+actions: {}
+slots:
+  - id: '17095400996670.02585405980844957'
+    name: structure
+    children:
+      - id: '17095401347210.5927985703736278'
+        definitionId: atomicNumber
+        parentSlotId: '17095400996670.02585405980844957'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicNumber7
+          prop: id
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 60
+          filter: true
+          forceView: true
+        index: 0
+        slots: []
+      - id: '17095401347210.8353117788050699'
+        definitionId: atomicButton
+        parentSlotId: '17095400996670.02585405980844957'
+        styles:
+          xl:
+            status:
+              value: primary-dark
+              dataValue: primary
+              withData: false
+            iconPlacement: center
+            visible: true
+        properties:
+          name: atomicButton4
+          text: '{{value}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          prop: uri
+          title: Link
+          alignment: center
+          pinColumn: right
+          width: '50'
+          icon:
+            value: external-link
+            dataValue: star-outline
+            withData: false
+          linkInfo:
+            active: externalPath
+            internalPath: ''
+            externalPath: >-
+              http://115.178.77.230:20000/cb/tracker/{{ui.restTable2.selectedRow
+              ? ui.restTable2.selectedRow.data.id : null}}
+          openInNewTab: true
+          widthMode: fixed
+        index: 1
+        slots: []
+      - id: '17095401347210.5432684785879192'
+        definitionId: atomicString
+        parentSlotId: '17095400996670.02585405980844957'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString16
+          prop: name
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+          required:
+            value: true
+            dataValue: 'false'
+            withData: false
+        index: 2
+        slots: []
+      - id: '17095401347210.7731789170011523'
+        definitionId: atomicText
+        parentSlotId: '17095400996670.02585405980844957'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicText5
+          prop: description
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 200
+          filter: true
+        index: 3
+        slots: []
+      - id: '17095401347210.8814006668398464'
+        definitionId: atomicSelect
+        parentSlotId: '17095400996670.02585405980844957'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicSelect10
+          prop: descFormat
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          width: 120
+          options:
+            value:
+              - value: Plain
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '17095262148240.6854116544738444'
+              - value: Wiki
+                color: success
+                __UIBAKERY__SYSTEM_ID__: '17095262148240.5091619950339403'
+            dataValue: |-
+              [
+                {
+                  value: 'Plain',
+                  color: 'primary'
+                },
+                {
+                  value: 'Wiki',
+                  color: 'success'
+                }
+              ]
+            withData: false
+        index: 4
+        slots: []
+      - id: '17095401347210.3844948141525497'
+        definitionId: atomicString
+        parentSlotId: '17095400996670.02585405980844957'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString20
+          prop: keyName
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        index: 5
+        slots: []
+      - id: '17095401347210.6496569092897913'
+        definitionId: atomicSelect
+        parentSlotId: '17095400996670.02585405980844957'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicSelect11
+          prop: type
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          alignment: left
+          primaryKey: false
+          filter: true
+          width: 120
+          options:
+            value:
+              - value: ''
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '17095183592610.6289608505451441'
+                title: ''
+              - value:
+                  uri: /tracker/type/11
+                  name: Risk
+                color: success
+                __UIBAKERY__SYSTEM_ID__: '17095183592610.515538169417328'
+              - value:
+                  uri: /tracker/type/5
+                  name: Requirement
+                color: warning
+                __UIBAKERY__SYSTEM_ID__: '17095183592610.1518917102869919'
+              - value:
+                  uri: /tracker/type/5
+                  name: Requirement
+                color: danger
+                __UIBAKERY__SYSTEM_ID__: '17095183592610.9907291348646439'
+              - value:
+                  uri: /tracker/type/3
+                  name: Change Request
+                color: info
+                __UIBAKERY__SYSTEM_ID__: '17095183592610.8186739733628143'
+              - value:
+                  uri: /tracker/type/2
+                  name: Bug
+                color: basic
+                __UIBAKERY__SYSTEM_ID__: '17095183592610.7924115541093162'
+              - value:
+                  uri: /tracker/type/6
+                  name: Task
+                color: primary-light
+                __UIBAKERY__SYSTEM_ID__: '17095183592610.11668324776312211'
+              - value:
+                  uri: /tracker/type/9
+                  name: Test Run
+                color: success-light
+                __UIBAKERY__SYSTEM_ID__: '17095183592610.6014924417223486'
+              - value:
+                  uri: /tracker/type/8
+                  name: Time Recording
+                color: warning-light
+                __UIBAKERY__SYSTEM_ID__: '17095183592610.6025930784641431'
+            dataValue: |-
+              [
+                {
+                  value: {
+                    uri: '/tracker/type/10',
+                    name: 'User Story',
+                  },
+                  color: 'primary',
+                },
+                {
+                  value: {
+                    uri: '/tracker/type/11',
+                    name: 'Risk',
+                  },
+                  color: 'success',
+                },
+                {
+                  value: {
+                    uri: '/tracker/type/5',
+                    name: 'Requirement',
+                  },
+                  color: 'warning',
+                },
+                {
+                  value: {
+                    uri: '/tracker/type/5',
+                    name: 'Requirement',
+                  },
+                  color: 'danger',
+                },
+                {
+                  value: {
+                    uri: '/tracker/type/3',
+                    name: 'Change Request',
+                  },
+                  color: 'info',
+                },
+                {
+                  value: {
+                    uri: '/tracker/type/2',
+                    name: 'Bug',
+                  },
+                  color: 'basic',
+                },
+                {
+                  value: {
+                    uri: '/tracker/type/6',
+                    name: 'Task',
+                  },
+                  color: 'primary-light',
+                },
+                {
+                  value: {
+                    uri: '/tracker/type/9',
+                    name: 'Test Run',
+                  },
+                  color: 'success-light',
+                },
+                {
+                  value: {
+                    uri: '/tracker/type/8',
+                    name: 'Time Recording',
+                  },
+                  color: 'warning-light',
+                },
+              ].map((i) => {
+                return i.value.name;
+              });
+            withData: true
+          mappedValue: '{{value.name}}'
+          editModeValue: '{{value.name}}'
+        index: 6
+        slots: []

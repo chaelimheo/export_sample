@@ -1,0 +1,108 @@
+id: '17095192342440.7475673780276932'
+kind: workflow
+name: getItems
+nameConfigured: true
+steps:
+  - id: '17096894294690.6918258914573252'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17095192342450.5579649147200076'
+                type: httpRequest
+                name: request2
+                params:
+                  - type: datasourceId
+                    value: CodeBeamer
+                    valueType: custom
+                    mustSelectFirst: true
+                  - type: method
+                    value: GET
+                    valueType: string
+                  - type: url
+                    value: rest/tracker/{{ui.restTable2.selectedRow.data.id}}/items
+                    valueType: interpolatedValue
+                    interpolationType: string
+                  - type: headers
+                    value:
+                      - name: ''
+                        value: ''
+                    valueType: custom
+                    interpolationType: string
+                  - type: queryParams
+                    value:
+                      - name: ''
+                        value: ''
+                    valueType: custom
+                    interpolationType: string
+                  - type: body
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: structuredBody
+                    value: []
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: bodyType
+                    value: raw
+                    valueType: string
+                  - type: successMapper
+                    value: ./request2-successMapper.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: mapperEnabled
+                    value: true
+                    valueType: custom
+                level: 0
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: auto
+modeConfigured: true
+parentPageId: '1'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.getItems.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.getItems.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.getItems.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+parentId: '17095180293960.5526435359195876'
+selected: true
+configured: true
+actions:
+  success:
+    - action: '17095314088850.7566291474931428'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+    - action: '17095254388810.24562732222711503'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 1
+  error: []

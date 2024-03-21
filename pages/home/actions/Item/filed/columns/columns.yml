@@ -1,0 +1,54 @@
+id: '17095314088850.7566291474931428'
+kind: workflow
+name: columns
+nameConfigured: true
+steps:
+  - id: '17096916717590.6048541697873173'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17095314136600.5377794793298969'
+                type: customAsyncCode
+                name: code
+                params:
+                  - type: asyncCode
+                    value: ./code.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 0
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+parentId: '17096022519680.2310846228204828'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.columns.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.columns.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.columns.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

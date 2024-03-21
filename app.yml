@@ -1,0 +1,14 @@
+storeItemList: []
+metadata:
+  favicon: ''
+  code: ''
+  title: HEO_Test
+  description: ''
+  breakpoints: []
+appSettings:
+  properties:
+    defaultData: '{{ui.restTable3}}'
+  actions: {}
+  gridVersion: 2
+  density: compact
+internalType: project

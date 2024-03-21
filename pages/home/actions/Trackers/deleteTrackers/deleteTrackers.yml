@@ -1,0 +1,85 @@
+id: '17095434736160.7149080600831081'
+kind: workflow
+name: deleteTrackers
+nameConfigured: true
+steps:
+  - id: '17095434765520.5922815572375788'
+    type: httpRequest
+    name: request
+    params:
+      - type: datasourceId
+        value: CodeBeamer
+        valueType: string
+        mustSelectFirst: true
+      - type: method
+        value: DELETE
+        valueType: string
+      - type: url
+        value: rest/tracker/{{ui.restTable2.deletedRow.data.id}}
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: headers
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+        interpolationType: string
+      - type: queryParams
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+        interpolationType: string
+      - type: body
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: structuredBody
+        value: []
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: bodyType
+        value: raw
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+actions:
+  success:
+    - action: '17095180066790.5986655354077162'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  error: []
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+parentId: '17095180189730.3220739319544732'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.deleteTrackers.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.deleteTrackers.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.deleteTrackers.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

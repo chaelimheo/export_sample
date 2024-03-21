@@ -1,0 +1,22 @@
+id: '17096223901720.24477872269335865'
+definitionId: dateTimeView
+parentSlotId: '17096161439950.7989252050218085'
+styles:
+  xl:
+    gridItem:
+      x: 10
+      y: 507
+      w: 5
+      h: 6
+  xs:
+    gridItem:
+      x: 0
+      y: 940
+      w: 24
+      h: 6
+properties:
+  name: dateTime
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+slots: []

@@ -1,0 +1,343 @@
+id: '17095163627520.9553395064437749'
+definitionId: smartTable
+parentSlotId: '2'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 9
+      w: 24
+      h: 104
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 80
+properties:
+  dynamicColumns:
+    value: []
+    dataValue: |-
+      [
+        {
+          "prop": "id",
+          "type": "number",
+          "primaryKey": true
+        },
+        "full_name",
+        {
+          "prop": "avatar",
+          "type": "image"
+        },
+        {
+          "prop": "email",
+          "type": "link"
+        }
+      ]
+    withData: false
+  data: '{{actions.getProjects.data}}'
+  name: restTable
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Projects
+  showLoading:
+    withData: true
+    dataValue: '{{actions.getProjects.loading}}'
+    value: false
+  showEditAction:
+    value: true
+    dataValue: '{{ui.restTable.selectedRow.data.id === ui.restTable.clickedRow.data.id}}'
+    withData: false
+  enableUserColumnResize:
+    value: false
+    dataValue: 'false'
+    withData: false
+  showAddAction:
+    value: true
+    dataValue: 'false'
+    withData: false
+  showDeleteAction:
+    value: true
+    dataValue: 'false'
+    withData: false
+  showBulkEditAction:
+    value: false
+    dataValue: 'false'
+    withData: false
+  showReloadAction:
+    value: true
+    dataValue: 'false'
+    withData: false
+  limit: '{{actions.getProjects.data.length}}'
+  serverSidePagination: false
+  disableRowSelection:
+    value: false
+    dataValue: 'false'
+    withData: false
+actions:
+  smartTableCreate:
+    - action: '17095404001590.5597077570039499'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  init:
+    - action: '17095170742060.7089862767961845'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 4
+  smartTableEdit:
+    - action: '17095422381300.0949785918710302'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 3
+  smartTableBulkEdit: []
+  smartTableDelete:
+    - action: '17095420382170.13237014154707838'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 2
+  smartTableRowSelect: []
+  smartTableRowClick: []
+  smartTablePageSelect: []
+  smartTableFilterChange: []
+  smartTableSortChange: []
+  smartTableReload:
+    - action: '17095170742060.7089862767961845'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 1
+  uiOnCellChangeTrigger: []
+slots:
+  - id: '17095163627520.14926912078515242'
+    name: columns
+    children:
+      - id: '17095172415160.2615601573753248'
+        definitionId: atomicNumber
+        parentSlotId: '17095163627520.14926912078515242'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicNumber
+          prop: id
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 60
+          filter: true
+          forceView: true
+          enableAdding: false
+        index: 0
+        slots: []
+      - id: '17095172415160.13951371233774013'
+        definitionId: atomicText
+        parentSlotId: '17095163627520.14926912078515242'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicText
+          prop: name
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 200
+          filter: true
+          required:
+            value: true
+            dataValue: 'false'
+            withData: false
+        index: 1
+        slots: []
+      - id: '17095172415160.0254521151590974'
+        definitionId: atomicText
+        parentSlotId: '17095163627520.14926912078515242'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicText2
+          prop: description
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 200
+          filter: true
+          enableAdding: true
+        index: 3
+        slots: []
+      - id: '17095172415160.09871428929105663'
+        definitionId: atomicBoolean
+        parentSlotId: '17095163627520.14926912078515242'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicBoolean
+          prop: closed
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 60
+          filter: true
+          enableAdding: false
+        index: 6
+        slots: []
+      - id: '17095172415160.39775016629464877'
+        definitionId: atomicSelect
+        parentSlotId: '17095163627520.14926912078515242'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicSelect2
+          prop: descFormat
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          options:
+            value:
+              - value: Wiki
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '17095174153650.10604832714014956'
+              - value: Plain
+                color: success
+                __UIBAKERY__SYSTEM_ID__: '17095174153650.553722479365583'
+            dataValue: |-
+              [
+                {
+                  value: 'Wiki',
+                  color: 'primary'
+                },
+                {
+                  value: 'Plain',
+                  color: 'success'
+                }
+              ]
+            withData: false
+          primaryKey: false
+          filter: true
+          width: 120
+        index: 4
+        slots: []
+      - id: '17095276149800.3296523918786536'
+        definitionId: atomicSelect
+        parentSlotId: '17095163627520.14926912078515242'
+        styles: {}
+        properties:
+          name: atomicSelect
+          prop: category
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          options:
+            value:
+              - value:
+                  id: 22940
+                  name: category 0920
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '17095276525620.3648497070678087'
+              - value:
+                  id: 22940
+                  name: category 0920
+                color: success
+                __UIBAKERY__SYSTEM_ID__: '17095276525620.4179867354856517'
+              - value:
+                  id: 4855
+                  name: my category
+                color: warning
+                __UIBAKERY__SYSTEM_ID__: '17095276525620.26814609149508417'
+              - value:
+                  id: 46138
+                  name: category 0206
+                color: danger
+                __UIBAKERY__SYSTEM_ID__: '17095276525620.4568945594710965'
+              - value:
+                  id: 4855
+                  name: my category
+                color: info
+                __UIBAKERY__SYSTEM_ID__: '17095276525620.29857057157861244'
+              - value:
+                  id: 46138
+                  name: category 0206
+                color: basic
+                __UIBAKERY__SYSTEM_ID__: '17095276525620.7489711675527466'
+              - value:
+                  id: 4855
+                  name: my category
+                color: primary-light
+                __UIBAKERY__SYSTEM_ID__: '17095276525620.12337910210443614'
+              - value:
+                  id: 46138
+                  name: category 0206
+                color: success-light
+                __UIBAKERY__SYSTEM_ID__: '17095276525620.31458889722468886'
+              - value:
+                  id: 4855
+                  name: my category
+                color: warning-light
+                __UIBAKERY__SYSTEM_ID__: '17095276525620.7942333837561837'
+            dataValue: '{{actions.setCategory.data}}'
+            withData: true
+          mappedValue: '{{option.value.name}}'
+          alignment: left
+          editModeValue: '{{value.name}}'
+          mappedColor: ''
+        index: 5
+        actions: {}
+        slots: []
+      - id: '17095384445080.5853034766004945'
+        definitionId: atomicButton
+        parentSlotId: '17095163627520.14926912078515242'
+        styles:
+          xl:
+            status:
+              value: primary-dark
+              dataValue: primary
+              withData: false
+            iconPlacement: center
+        properties:
+          name: atomicButton2
+          text: '{{value}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          prop: Link
+          widthMode: fixed
+          width: '50'
+          alignment: center
+          linkInfo:
+            active: externalPath
+            internalPath: ''
+            externalPath: http://115.178.77.230:20000/cb/project/{{row.name}}
+          icon:
+            value: external-link
+            dataValue: star-outline
+            withData: false
+          openInNewTab: true
+          pinColumn: right
+        index: 7
+        slots: []
+      - id: '17095405884390.22970876445880895'
+        definitionId: atomicString
+        parentSlotId: '17095163627520.14926912078515242'
+        styles: {}
+        properties:
+          name: atomicString18
+          prop: keyName
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 2
+        slots: []

@@ -1,0 +1,22 @@
+id: '17096228835650.37799802138307736'
+definitionId: textAnnotate
+parentSlotId: '17096161439950.7989252050218085'
+styles:
+  xl:
+    gridItem:
+      x: 11
+      y: 599
+      w: 8
+      h: 80
+  xs:
+    gridItem:
+      x: 0
+      y: 973
+      w: 24
+      h: 80
+properties:
+  name: textAnnotate
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+slots: []

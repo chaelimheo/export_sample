@@ -1,0 +1,54 @@
+id: '17095283521670.17468222024312952'
+kind: workflow
+name: setCategory
+nameConfigured: true
+steps:
+  - id: '17096912164810.12213916603479325'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17095283546200.9113027263816205'
+                type: customAsyncCode
+                name: code
+                params:
+                  - type: asyncCode
+                    value: ./code.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+parentId: '17095171707750.6596189512095136'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.setCategory.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.setCategory.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.setCategory.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

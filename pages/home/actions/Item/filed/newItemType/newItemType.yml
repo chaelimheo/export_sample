@@ -1,0 +1,113 @@
+id: '17095996609110.665176720761885'
+kind: workflow
+name: newItemType
+nameConfigured: true
+steps:
+  - id: '17096912752370.5893072144970368'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17095996626600.13011579228126813'
+                type: httpRequest
+                name: request
+                params:
+                  - type: datasourceId
+                    value: CodeBeamer
+                    valueType: string
+                    mustSelectFirst: true
+                  - type: method
+                    value: GET
+                    valueType: string
+                  - type: url
+                    value: rest/tracker/{{ui.restTable2.selectedRow.data.id}}/newItem
+                    valueType: interpolatedValue
+                    interpolationType: string
+                  - type: headers
+                    value:
+                      - name: ''
+                        value: ''
+                    valueType: custom
+                    interpolationType: string
+                  - type: queryParams
+                    value:
+                      - name: ''
+                        value: ''
+                    valueType: custom
+                    interpolationType: string
+                  - type: body
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: structuredBody
+                    value: []
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: bodyType
+                    value: raw
+                    valueType: string
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 0
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+actions:
+  success:
+    - action: '17096002605480.30744709881269294'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+    - action: '17096004336540.7816542417346752'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 1
+    - action: '17095314088850.7566291474931428'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 2
+  error: []
+mode: auto
+modeConfigured: true
+parentPageId: '1'
+parentId: '17096022519680.2310846228204828'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.newItemType.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.newItemType.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.newItemType.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

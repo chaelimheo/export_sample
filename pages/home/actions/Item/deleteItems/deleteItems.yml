@@ -1,0 +1,85 @@
+id: '17096023499760.04528688889703192'
+kind: workflow
+name: deleteItems
+nameConfigured: true
+steps:
+  - id: '17096023513850.6985672005503507'
+    type: httpRequest
+    name: request
+    params:
+      - type: datasourceId
+        value: CodeBeamer
+        valueType: string
+        mustSelectFirst: true
+      - type: method
+        value: DELETE
+        valueType: string
+      - type: url
+        value: rest/item/{{ui.restTable3.deletedRow.data.id}}
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: headers
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+        interpolationType: string
+      - type: queryParams
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+        interpolationType: string
+      - type: body
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: structuredBody
+        value: []
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: bodyType
+        value: raw
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+parentId: '17095180293960.5526435359195876'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.deleteItems.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.deleteItems.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.deleteItems.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+actions:
+  success:
+    - action: '17095192342440.7475673780276932'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  error: []

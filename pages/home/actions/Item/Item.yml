@@ -1,0 +1,31 @@
+id: '17095180293960.5526435359195876'
+kind: folder
+name: Item
+nameConfigured: true
+steps:
+  - id: '17095180293960.30850446984297664'
+    type: draft
+    name: newStep
+    params: []
+    level: 0
+    fallthroughError: false
+    isChanged: false
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Item.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Item.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Item.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: false

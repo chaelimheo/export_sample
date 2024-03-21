@@ -1,0 +1,86 @@
+id: '17095420382170.13237014154707838'
+kind: workflow
+name: deleteProj
+nameConfigured: true
+steps:
+  - id: '17095420400450.05951835376401049'
+    type: httpRequest
+    name: deleteProj
+    params:
+      - type: datasourceId
+        value: CodeBeamer
+        valueType: string
+        mustSelectFirst: true
+      - type: method
+        value: DELETE
+        valueType: string
+      - type: url
+        value: rest/project/{{ui.restTable.deletedRow.data.id}}
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: headers
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+        interpolationType: string
+      - type: queryParams
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+        interpolationType: string
+      - type: body
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: structuredBody
+        value: []
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: bodyType
+        value: raw
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+actions:
+  success:
+    - action: '17095170742060.7089862767961845'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  error: []
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+parentId: '17095171707750.6596189512095136'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.deleteProj.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.deleteProj.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.deleteProj.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

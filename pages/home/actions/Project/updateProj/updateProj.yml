@@ -1,0 +1,85 @@
+id: '17095422381300.0949785918710302'
+kind: workflow
+name: updateProj
+nameConfigured: true
+steps:
+  - id: '17095422397130.019328851945884074'
+    type: httpRequest
+    name: request
+    params:
+      - type: datasourceId
+        value: CodeBeamer
+        valueType: string
+        mustSelectFirst: true
+      - type: method
+        value: PUT
+        valueType: string
+      - type: url
+        value: rest/project
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: headers
+        value:
+          - name: Content-Type
+            value: application/json
+        valueType: custom
+        interpolationType: string
+      - type: queryParams
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+        interpolationType: string
+      - type: body
+        value: '{{ui.restTable.editedRow.data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: structuredBody
+        value: []
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: bodyType
+        value: object
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+parentId: '17095171707750.6596189512095136'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.updateProj.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.updateProj.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.updateProj.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+actions:
+  success:
+    - action: '17095170742060.7089862767961845'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  error: []

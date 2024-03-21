@@ -1,0 +1,15 @@
+id: '17096287977470.14523888199200718'
+definitionId: step
+styles: {}
+properties:
+  name: step3
+  title: Step 3
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '17096287977470.42136533331113535'
+index: 2
+slots:
+  - id: '17096287977470.707968265243784'
+    name: content
+    children: []

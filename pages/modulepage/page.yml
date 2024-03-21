@@ -1,0 +1,26 @@
+id: '17096861939910.06729448798772664'
+name: modulePage
+url: modulepage
+roleIds: []
+disableInMenu: false
+parentPageId: ''
+slots:
+  - id: '17096861939910.7960720674958481'
+    name: content
+    children:
+      - id: '17096861939920.71842354903432'
+        definitionId: grid
+        parentSlotId: '17096861939910.7960720674958481'
+        styles: {}
+        properties:
+          name: modulepage
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '17096861939920.1489899768392584'
+            name: content
+            children:
+              - components/module2.yml

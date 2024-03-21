@@ -1,0 +1,1 @@
+return ({{ui.restTable3.selectedRow.index}}>=0);

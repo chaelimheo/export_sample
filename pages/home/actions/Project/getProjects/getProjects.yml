@@ -1,0 +1,85 @@
+id: '17095170742060.7089862767961845'
+kind: workflow
+name: getProjects
+nameConfigured: true
+steps:
+  - id: '17095171182160.8251300054784749'
+    type: httpRequest
+    name: request2
+    params:
+      - type: datasourceId
+        value: CodeBeamer
+        valueType: custom
+        mustSelectFirst: true
+      - type: method
+        value: GET
+        valueType: string
+      - type: url
+        value: rest/projects
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: headers
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+        interpolationType: string
+      - type: queryParams
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+        interpolationType: string
+      - type: body
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: structuredBody
+        value: []
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: bodyType
+        value: raw
+        valueType: string
+      - type: successMapper
+        value: ./request2-successMapper.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.getProjects.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.getProjects.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.getProjects.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+parentId: '17095171707750.6596189512095136'
+selected: false
+configured: true
+actions:
+  success:
+    - action: '17095283521670.17468222024312952'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  error: []
